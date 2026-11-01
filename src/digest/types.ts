@@ -24,7 +24,5 @@ export type Night =
 // A night that is not YYYY-MM-DD is { found: false }, so it never reaches other files.
 export type ReadNight = (runsDir: string, night: string) => Night;
 
-// Stub until #1's reader lands; then this becomes a re-export of the real one.
-export const readNight: ReadNight = () => {
-  throw new Error('readNight: not implemented yet (#1)');
-};
+// The reader itself lives in read.ts; re-exported here so section 2 imports one file.
+export { readNight } from './read.js';
