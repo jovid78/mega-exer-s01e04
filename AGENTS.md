@@ -19,7 +19,13 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
    `docs/issues/` (ADR 0004).
 3. Issues are worked by workers, one issue per worker, each on its own branch or worktree.
    Pick the model per issue: the strongest for logic, a cheaper one for views and tests.
-4. A worker closes its issue with a closing comment, exactly this shape:
+4. Before starting, run the issue's "Starting point" checks on `main`. If one fails, comment
+   on the issue with what failed and stop.
+5. Notes go in issue comments, not in files or chat. Comment on your issue when you hit
+   something worth knowing: a choice the plan left open, a surprise in the data, a check that
+   failed. If it changes another issue's work, comment on that issue too. Lessons that hold
+   beyond this plan go into this file as a reviewed change.
+6. A worker closes its issue with a closing comment, exactly this shape:
 
    ```
    done: <what changed, one line>
@@ -27,7 +33,7 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
    commit: <sha or "none">
    ```
 
-5. An issue is closed only when its "Done when" holds. If it can't hold yet, leave it open and
+7. An issue is closed only when its "Done when" holds. If it can't hold yet, leave it open and
    say what it waits on.
 
 ## Skills
